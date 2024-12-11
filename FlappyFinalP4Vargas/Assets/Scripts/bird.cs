@@ -18,6 +18,18 @@ public class bird : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (isDead == false)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                rb2d.velocity = Vector2.zero;
+                rb2d.AddForce(new Vector2(0, upForce));
+            }
+        }
+    }
+
+    void OnCollliderEnter2D ()
+    {
+        isDead = true;
     }
 }
